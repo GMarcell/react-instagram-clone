@@ -1,0 +1,46 @@
+.Profile__summary {
+    border-bottom: 2px solid black;
+}
+
+.Profile__Details {
+    margin: 50px 10px auto 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Profile__avatar {
+    height: 80px !important;
+    width: 80px !important;
+}
+
+.Profile__number {
+    display: flex;
+    margin-right: 5px;
+    justify-content: space-between;
+}
+
+h4 {
+    margin: 0;
+}
+
+.Profile__sum {
+    margin: auto 20px auto auto;
+}
+
+.Profile__name {
+    text-align: left;
+    margin: 5px 10px auto 10px;
+}
+
+.Profile__name h4 {
+    font-size: 12px;
+}
+
+.Profile__edit {
+    width: 90%;
+    margin: 15px 10px 15px 10px;
+    border: 2px solid black;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 5px;
+}
