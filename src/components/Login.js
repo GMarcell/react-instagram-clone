@@ -3,6 +3,8 @@ import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../firebase/c
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from 'react-router-dom';
 import './css/Login.css'
+import instagramText from '../assets/img/instagram-text.png'
+import { Google } from '@mui/icons-material';
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -19,21 +21,24 @@ function Login() {
     return (
         <div className='login'>
             <div className='login__container'>
+                <img className='instagram__text' src={instagramText} alt='instagram-text'/>
                 <input type="text" className="login__textBox" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="E-mail Address" />
                 <input type="password" className="login__textBox" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                {/* <div className='forget'>
+                    <Link to="/reset">Forgot Password</Link>
+                </div> */}
                 <button className="login__btn" onClick={() => logInWithEmailAndPassword(email, password)} >
                     Login
                 </button>
+                <h3 className='login__or'>OR</h3>
                 <button className="login__btn login__google" onClick={signInWithGoogle}>
+                    <Google className='google__icon'/>
                     Login with Google
                 </button>
-                <div>
-                    <Link to="/reset">Forgot Password</Link>
-                </div>
-                <div>
-                    Don't have an account? <Link to="/register">Register</Link> now.
-                </div>
             </div>
+                <div className='login__register'>
+                    Don't have an account? <Link className='login__registerLink' to="/register">Sign Up</Link>
+                </div>
         </div>
     )
 }
