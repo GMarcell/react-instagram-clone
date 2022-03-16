@@ -1,3 +1,4 @@
+import { GridOn, VideoLibrary, VideoLibraryOutlined } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
@@ -6,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { auth, db, logout } from '../firebase/config';
 import './css/Profile.css'
 import HeaderNav from './HeaderNav';
+import PostsGroup from './PostsGroup';
 
 function Profile() {
     const [user, loading, error] = useAuthState(auth);
@@ -30,30 +32,31 @@ function Profile() {
     return (
         <div className='Profile'>
             <div className='Profile__summary'>
-            <HeaderNav username={name}/>
-            <div className='Profile__Details'>
-                    <Avatar className='Profile__avatar' src="/static/images/avatar/1.jp"/>
-                <div className='Profile__number'>
-                    <div className='Profile__sum'>
-                        <h4>00</h4>
-                        <h4>Post</h4>
-                    </div>
-                    <div className='Profile__sum'>
-                        <h4>00</h4>
-                        <h4>Follower</h4>
-                    </div>
-                    <div className='Profile__sum'>
-                        <h4>00</h4>
-                        <h4>Following</h4>
+                <HeaderNav username={name}/>
+                <div className='Profile__Details'>
+                        <Avatar className='Profile__avatar' src="/static/images/avatar/1.jp"/>
+                    <div className='Profile__number'>
+                        <div className='Profile__sum'>
+                            <h4>00</h4>
+                            <h4>Post</h4>
+                        </div>
+                        <div className='Profile__sum'>
+                            <h4>00</h4>
+                            <h4>Follower</h4>
+                        </div>
+                        <div className='Profile__sum'>
+                            <h4>00</h4>
+                            <h4>Following</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className='Profile__name'>
-                <h4>{name}</h4>
-            </div>
-            <button className='Profile__edit'>
-                Edit Profile
-            </button>
+                <div className='Profile__name'>
+                    <h4>{name}</h4>
+                </div>
+                <button className='Profile__edit'>
+                    Edit Profile
+                </button>
+                <PostsGroup/>
             </div>
         </div>
     )

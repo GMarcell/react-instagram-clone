@@ -1,0 +1,28 @@
+.PostsGroup__header {
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+.PostsGroup__image {
+    width: 50%;
+    padding-bottom: 2px;
+    border-bottom: 2px solid blue;
+}
+
+.PostsGroup__video {
+    width: 50%;
+    padding-bottom: 2px;
+    border-bottom: 2px solid black;
+}
+
+.PostsGroup__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+}
+
+.PostsGroup__grid-item {
+    background-color: red;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}

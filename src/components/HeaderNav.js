@@ -1,4 +1,4 @@
-import { AddBoxOutlined, Inbox, Logout, Menu } from '@mui/icons-material'
+import { AddBoxOutlined, Logout } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
 import { logout } from '../firebase/config'
 import './css/HeaderNav.css'
@@ -16,7 +16,7 @@ function HeaderNav(props) {
         }
     }, [])
     return (
-        <div className={`headerNav ${show && "header__black"}`}>
+        <div className={`headerNav ${show && "headerNav__white"}`}>
             <h2 className='headerNav__username'>{props.username}</h2>
             <div className='headerNav__btn'>
                 <AddBoxOutlined fontSize='large'/>
