@@ -58,9 +58,11 @@
 
 .login__register {
     position: fixed;
-    bottom: 0;
+    bottom: 5px;
     width: 100%;
     text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid lightgray;
 }
 
 .login__registerLink {

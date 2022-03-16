@@ -6,17 +6,25 @@
     justify-content: center;
 }
 
+.register__image {
+    width: 60%;
+    margin: auto auto 15px auto;
+}
+
 .register__container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #dcdcdc;
     padding: 30px;
+    justify-content: center;
 }
 
 .register__textBox {
-    padding: 10px;
-    font-size: 18px;
+    border-radius: 5px;
+    border: transparent;
+    padding: 15px;
+    background-color: lightgray;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 
@@ -24,15 +32,36 @@
     padding: 10px;
     font-size: 18px;
     margin-bottom: 10px;
-    border: none;
+    border: transparent;
+    border-radius: 5px;
     color: white;
-    background-color: black;
+    background-color: #027aff;
+}
+
+.register__or {
+    color: rgb(170, 170, 170);
+    margin: 5px auto;
+    font-size: 17px;
 }
 
 .register__google {
-    background-color: #4285f4;
+    background-color: transparent;
+    color: #027aff;
+    font-weight: 700;
+    font-size: 20px;
 }
 
-.register div {
-    margin-top: 7px;
+.register__login {
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid lightgray;
+}
+
+.register__loginLink {
+    font-weight: 700;
+    color: #027aff;
+    text-decoration: none;
 }
