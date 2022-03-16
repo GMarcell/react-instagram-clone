@@ -14,18 +14,18 @@ function PostsGroup() {
                 </div>
             </div>
             <div className='PostsGroup__container'>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
-                <div class="PostsGroup__grid-item"></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
+                <div className='PostsGroup__grid-item'></div>
             </div>
         </div>
     )

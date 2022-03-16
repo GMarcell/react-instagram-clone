@@ -5,8 +5,9 @@ import React, { useEffect, useState } from 'react'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from 'react-router-dom';
 import { auth, db, logout } from '../firebase/config';
+import BottomNav from './BottomNav';
 import './css/Profile.css'
-import HeaderNav from './HeaderNav';
+import HeaderTitle from './HeaderTitle';
 import PostsGroup from './PostsGroup';
 
 function Profile() {
@@ -32,7 +33,7 @@ function Profile() {
     return (
         <div className='Profile'>
             <div className='Profile__summary'>
-                <HeaderNav username={name}/>
+                <HeaderTitle username={name}/>
                 <div className='Profile__Details'>
                         <Avatar className='Profile__avatar' src="/static/images/avatar/1.jp"/>
                     <div className='Profile__number'>
@@ -58,6 +59,7 @@ function Profile() {
                 </button>
                 <PostsGroup/>
             </div>
+            <BottomNav/>
         </div>
     )
 }
