@@ -1,4 +1,4 @@
-import { GridOn, VideoLibrary, VideoLibraryOutlined } from '@mui/icons-material';
+import { AddBoxOutlined, Logout } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom';
 import { auth, db, logout } from '../firebase/config';
 import BottomNav from './BottomNav';
 import './css/Profile.css'
-import HeaderTitle from './HeaderTitle';
 import PostsGroup from './PostsGroup';
 
 function Profile() {
     const [user, loading, error] = useAuthState(auth);
     const [name, setName] = useState("");
+    const [show, handleShow] = useState(false)
     const navigate = useNavigate();
     const fetchUserName = async () => {
         try {
@@ -30,10 +30,27 @@ function Profile() {
         if (!user) return navigate("/");
         fetchUserName();
     }, [user, loading]);
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                handleShow(true)
+            } else handleShow(false)
+        })
+        return () => {
+            window.removeEventListener("scroll")
+        }
+    }, [])
     return (
         <div className='Profile'>
             <div className='Profile__summary'>
-                <HeaderTitle username={name}/>
+                {/* <HeaderTitle username={name}/> */}
+                <div className={`HeaderTitle ${show && "HeaderTitle__white"}`}>
+                    <h2 className='HeaderTitle__username'>{name}</h2>
+                    <div className='HeaderTitle__btn'>
+                        <AddBoxOutlined fontSize='large'/>
+                        <Logout fontSize='large' className='HeaderTitle__menu' onClick={logout}/>
+                    </div>
+                </div>
                 <div className='Profile__Details'>
                         <Avatar className='Profile__avatar' src="/static/images/avatar/1.jp"/>
                     <div className='Profile__number'>

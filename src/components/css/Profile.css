@@ -42,3 +42,37 @@ h4 {
     font-size: 12px;
     font-weight: 700;
 }
+
+.HeaderTitle {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 10px;
+    height: 30px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.HeaderTitle__white {
+    background-color: whitesmoke !important;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.HeaderTitle__username {
+    position: fixed;
+    left: 10px;
+    margin: 0;
+}
+
+.HeaderTitle__btn {
+    position: fixed;
+    right: 10px;
+}
+
+.HeaderTitle__menu {
+    margin-left: 15px;
+}
