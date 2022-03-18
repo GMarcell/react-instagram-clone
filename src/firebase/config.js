@@ -2,22 +2,24 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut, } from "firebase/auth";
 import { getFirestore, query, getDocs, collection, where, addDoc} from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD2SPruxtLUf3YewwO4MeLV-MweOxQlgjI",
-  authDomain: "instagram-clone-d1422.firebaseapp.com",
-  projectId: "instagram-clone-d1422",
-  storageBucket: "instagram-clone-d1422.appspot.com",
-  messagingSenderId: "843761730054",
-  appId: "1:843761730054:web:37870abf8d2137f50e3987"
+    apiKey: "AIzaSyD2SPruxtLUf3YewwO4MeLV-MweOxQlgjI",
+    authDomain: "instagram-clone-d1422.firebaseapp.com",
+    projectId: "instagram-clone-d1422",
+    storageBucket: "instagram-clone-d1422.appspot.com",
+    messagingSenderId: "843761730054",
+    appId: "1:843761730054:web:37870abf8d2137f50e3987"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app)
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
@@ -79,4 +81,4 @@ const logout = () => {
     signOut(auth);
 };
 
-export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout };
+export { auth, db, storage ,signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout };

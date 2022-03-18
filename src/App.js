@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Reset from './components/Reset';
 import Profile from './components/Profile';
 import Home from './components/Home';
+import AddPost from './components/AddPost';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/reset" element={<Reset/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/home" element={<Home/>}/>
+          <Route path="/addform" element={<AddPost/>}/>
         </Routes>
       </Router>
     </div>
