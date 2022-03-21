@@ -1,8 +1,19 @@
 import { GridOnOutlined, VideoLibraryOutlined } from '@mui/icons-material'
-import React from 'react'
+import { collection, getDocs } from 'firebase/firestore'
+import React, { useEffect, useState } from 'react'
+import { db } from '../firebase/config'
 import './css/PostsGroup.css'
 
 function PostsGroup() {
+    const [posts, setPosts] = useState([])
+    const dbPostRef = collection(db, "posts")
+    useEffect(() => {
+        const getPosts = async () => {
+            const data = await getDocs(dbPostRef)
+            setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        }
+        getPosts()
+    }, [posts])
     return (
         <div>
             <div className='PostsGroup__header'>
@@ -14,18 +25,11 @@ function PostsGroup() {
                 </div>
             </div>
             <div className='PostsGroup__container'>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
-                <div className='PostsGroup__grid-item'></div>
+                    {
+                        posts.map(post => (
+                            <img className='PostsGroup__grid-item' src={post.imgUrl} alt='post'/>
+                        ))
+                    }
             </div>
         </div>
     )

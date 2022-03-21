@@ -1,6 +1,5 @@
 .PostsGroup__header {
     display: flex;
-    /* justify-content: space-evenly; */
 }
 
 .PostsGroup__image {
@@ -19,10 +18,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
+    grid-auto-flow: row;
 }
 
 .PostsGroup__grid-item {
-    background-color: red;
-    aspect-ratio: 1;
+    width: 100%;
     border: 1px solid black;
 }

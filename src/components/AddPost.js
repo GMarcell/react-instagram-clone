@@ -6,7 +6,7 @@ import { auth, db, logout, storage } from '../firebase/config';
 import BottomNav from './BottomNav';
 import './css/AddPost.css'
 import instagramText from '../assets/img/instagram-text.png'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AddBoxOutlined, Logout } from '@mui/icons-material';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -16,6 +16,7 @@ function AddPost() {
     const [caption, setCaption] = useState("");
     const [selectedFile, setSelectedFile] = useState(null);
     const [show, handleShow] = useState(false)
+    const navigate = useNavigate();
 
     const fetchUserName = async () => {
         try {
@@ -41,7 +42,7 @@ function AddPost() {
 
     useEffect(() => {
         if (loading) return;
-        if (!user) return Navigate("/");
+        if (!user) return navigate("/");
         fetchUserName();
     }, [user, loading]);
 
@@ -66,6 +67,7 @@ function AddPost() {
                 const prog = Math.round(
                     (snapshot.bytesTransferred / snapshot.TotalBytes) * 100
                 )
+                navigate("/home")
             },
             (error) => {
                 console.log(error);
@@ -79,7 +81,6 @@ function AddPost() {
                         username: name
                     })
                 })
-                Navigate("/home")
             }
         )
     }
