@@ -1,16 +1,19 @@
 import { AddBoxOutlined, Logout } from '@mui/icons-material'
 import { Avatar } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { db, logout } from '../firebase/config'
+import { auth, db, logout } from '../firebase/config'
 import './css/Home.css'
 import BottomNav from './BottomNav'
 import instagramText from '../assets/img/instagram-text.png'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import Post from './Post'
 import { Link } from 'react-router-dom'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 function Home() {
     const [show, handleShow] = useState(false)
+    const [user, loading, error] = useAuthState(auth);
+    const [name, setName] = useState("");
     const [posts, setPosts] = useState([])
     const dbPostRef = collection(db, "posts")
     useEffect(() => {
@@ -23,6 +26,18 @@ function Home() {
             window.removeEventListener("scroll")
         }
     }, [])
+
+    const fetchUserName = async () => {
+        try {
+            const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+            const doc = await getDocs(q);
+            const data = doc.docs[0].data();
+            setName(data.name);
+        } catch (err) {
+            console.error(err);
+            alert("An error occured while fetching user data");
+        }
+    };
 
     useEffect(() => {
         const getPosts = async () => {
@@ -48,7 +63,7 @@ function Home() {
                             <div className='Home__storycircle'>
                                 <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp"/>
                             </div>
-                            <h6 className='Home__storyusername'>Grand Marcell</h6>
+                            <h6 className='Home__storyusername'>{name}</h6>
                         </div>
                         <div className='Home__story'>
                             <div className='Home__storycircle'>
