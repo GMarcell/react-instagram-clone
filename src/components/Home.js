@@ -45,25 +45,46 @@ function Home() {
                 </div>
                     <div className='Home__stories'>
                         <div className='Home__story'>
-                            <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp"/>
+                            <div className='Home__storycircle'>
+                                <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp"/>
+                            </div>
+                            <h6 className='Home__storyusername'>Grand Marcell</h6>
                         </div>
                         <div className='Home__story'>
-                            <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='G'/>
+                            <div className='Home__storycircle'>
+                                <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='G'/>
+                            </div>
+                            <h6 className='Home__storyusername'>Grand Marcell</h6>
                         </div>
                         <div className='Home__story'>
-                            <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='J'/>
+                            <div className='Home__storycircle'>
+                                <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='J'/>
+                            </div>
+                            <h6 className='Home__storyusername'>Grand Marcell</h6>
                         </div>
                         <div className='Home__story'>
-                            <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='F'/>
+                            <div className='Home__storycircle'>
+                                <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='F'/>
+                            </div>
+                            <h6 className='Home__storyusername'>Grand Marcell</h6>
                         </div>
                         <div className='Home__story'>
-                            <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='Y'/>
+                            <div className='Home__storycircle'>
+                                <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='Y'/>
+                            </div>
+                            <h6 className='Home__storyusername'>Grand Marcell</h6>
                         </div>
                         <div className='Home__story'>
-                            <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='B'/>
+                            <div className='Home__storycircle'>
+                                <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='B'/>
+                            </div>
+                            <h6 className='Home__storyusername'>Grand Marcell</h6>
                         </div>
                         <div className='Home__story'>
-                            <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='H'/>
+                            <div className='Home__storycircle'>
+                                <Avatar className='Home__storyavatar' src="/static/images/avatar/1.jp" alt='H'/>
+                            </div>
+                            <h6 className='Home__storyusername'>Grand Marcell</h6>
                         </div>
                     </div>
                     <div className='Home__Postcontainer'>

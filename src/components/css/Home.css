@@ -31,22 +31,30 @@
 }
 
 .Home__stories {
-    width: 100vw;
-    display: flex;
     padding-top: 55px;
-    overflow-x: scroll;
-    height: 80px;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 5px;
+    padding-left: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior: contain;
+    touch-action: pan-x;
+    background-color: blue;
 }
 
-.Home__story {
-    margin-left: 10px;
-    width: 62px;
-    height: 62px;
-    border: 2px solid red;
+.Home__storycircle {
+    border-radius: 50%;
+    border: solid red;
+    width: 70px;
     display: flex;
     align-items: center;
-    border-radius: 50%;
     aspect-ratio: 1;
+}
+
+.Home__storyusername {
+    margin: 0;
+
 }
 
 .Home__stories::-webkit-scrollbar {
@@ -54,7 +62,7 @@
 }
 
 .Home__storyavatar {
-    width: 57px !important;
-    height: 57px !important;
+    width: 65px !important;
+    height: 65px !important;
     margin: auto;
 }
