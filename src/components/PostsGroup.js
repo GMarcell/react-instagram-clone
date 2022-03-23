@@ -1,6 +1,7 @@
 import { GridOnOutlined, VideoLibraryOutlined } from '@mui/icons-material'
 import { collection, getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { db } from '../firebase/config'
 import './css/PostsGroup.css'
 
@@ -14,6 +15,12 @@ function PostsGroup() {
         }
         getPosts()
     }, [posts])
+
+    const navigate = useNavigate()
+    const changeRoute = () => {
+        let path = '/home'
+        navigate(path)
+    }
     return (
         <div>
             <div className='PostsGroup__header'>
@@ -27,7 +34,7 @@ function PostsGroup() {
             <div className='PostsGroup__container'>
                     {
                         posts.map(post => (
-                            <img className='PostsGroup__grid-item' src={post.imgUrl} alt='post'/>
+                            <img className='PostsGroup__grid-item' src={post.imgUrl} alt='post' onClick={changeRoute}/>
                         ))
                     }
             </div>
