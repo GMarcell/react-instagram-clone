@@ -12,9 +12,17 @@
     object-fit: contain;
 }
 
+.Post__name {
+    display: flex;
+}
+
 .Post__text {
     font-weight: normal;
     padding: 10px;
+}
+
+.Post__username {
+    margin: auto auto auto 10px;
 }
 
 .Post__text span {
