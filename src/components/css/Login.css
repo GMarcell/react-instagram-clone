@@ -17,6 +17,8 @@
     text-align: center;
     padding: 30px;
     justify-content: center;
+    border: 2px solid lightgray;
+    width: 300px;
 }
 
 .login__textBox {
@@ -25,7 +27,7 @@
     padding: 15px;
     font-size: 15px;
     margin-bottom: 10px;
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 
 .login__btn {
@@ -57,16 +59,25 @@
 }
 
 .login__register {
-    position: fixed;
-    bottom: 5px;
-    width: 100%;
     text-align: center;
-    padding-top: 15px;
-    border-top: 1px solid lightgray;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 2px solid lightgray;
+    margin-top: 20px;
 }
 
 .login__registerLink {
     font-weight: 700;
     color: #027aff;
     text-decoration: none;
+}
+
+.login__instagrampreview {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .login__instagrampreview {
+        display: block;
+    }
 }
