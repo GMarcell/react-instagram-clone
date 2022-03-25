@@ -3,7 +3,7 @@
     top: 0;
     width: 100vw;
     padding: 10px;
-    height: 30px;
+    height: 3rem;
     z-index: 1;
     display: flex;
     justify-content: space-between;
@@ -19,6 +19,7 @@
 
 .Home__headerimg {
     width: 30%;
+    aspect-ratio: 1;
 }
 
 .Home__headerbtn {
@@ -40,7 +41,6 @@
     scroll-snap-type: x mandatory;
     overscroll-behavior: contain;
     touch-action: pan-x;
-    background-color: blue;
 }
 
 .Home__storycircle {
