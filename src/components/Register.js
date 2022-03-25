@@ -22,23 +22,27 @@ function Register() {
     }, [user, loading]);
     return (
         <div className="register">
-            <div className="register__container">
-                <img className='register__image' src={instagramText} alt='instagram-text'/>
-                <input type="text" className="register__textBox" value={name} onChange={(e) => setName(e.target.value)} placeholder="Full Name" />
-                <input type="text" className="register__textBox" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="E-mail Address" />
-                <input type="password" className="register__textBox" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                <button className="register__btn" onClick={register}>
-                    Register
-                </button>
-                <h3 className='register__or'>OR</h3>
-                <button className="register__btn register__google" onClick={signInWithGoogle} >
-                    <Google className='google__icon'/>
-                    Register with Google
-                </button>
-            </div>
+            <div>
+                <div className="register__container">
+                    <img className='register__image' src={instagramText} alt='instagram-text'/>
+                    <h3 className='register__word'>Sign up to see photos and videos from your friends.</h3>
+                    <button className="register__btn register__google" onClick={signInWithGoogle} >
+                        <Google className='google__icon'/>
+                        Register with Google
+                    </button>
+                    <h3 className='register__or'>OR</h3>
+                    <input type="text" className="register__textBox" value={name} onChange={(e) => setName(e.target.value)} placeholder="Full Name" />
+                    <input type="text" className="register__textBox" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="E-mail Address" />
+                    <input type="password" className="register__textBox" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                    <button className="register__btn" onClick={register}>
+                        Register
+                    </button>
+                    <p>By signing up, you agree to our <strong> Terms , Data Policy </strong> and <strong> Cookies Policy </strong> .</p>
+                </div>
                 <div className='register__login'>
                     Already have an account? <Link to="/" className='register__loginLink'>Login</Link>
                 </div>
+            </div>
         </div>
     )
 }

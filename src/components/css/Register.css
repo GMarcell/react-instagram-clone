@@ -8,22 +8,29 @@
 
 .register__image {
     width: 60%;
-    margin: auto auto 15px auto;
+    margin: auto;
+}
+
+.register__word {
+    margin: 0.3rem auto;
+    color: gray;
 }
 
 .register__container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 30px;
+    padding: 1rem;
     justify-content: center;
+    border: 2px solid lightgray;
+    width: 300px;
 }
 
 .register__textBox {
     border-radius: 5px;
     border: transparent;
-    padding: 15px;
-    background-color: lightgray;
+    padding: 1rem;
+    background-color: whitesmoke;
     font-size: 15px;
     margin-bottom: 10px;
 }
@@ -40,28 +47,33 @@
 
 .register__or {
     color: rgb(170, 170, 170);
-    margin: 5px auto;
+    margin: 0 auto 10px auto;
     font-size: 17px;
 }
 
 .register__google {
-    background-color: transparent;
-    color: #027aff;
+    color: whitesmoke;
     font-weight: 700;
     font-size: 20px;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
 }
 
 .register__login {
-    position: fixed;
-    bottom: 5px;
-    width: 100%;
     text-align: center;
-    padding-top: 15px;
-    border-top: 1px solid lightgray;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    border: 2px solid lightgray;
+    margin-top: .5rem;
 }
 
 .register__loginLink {
     font-weight: 700;
     color: #027aff;
     text-decoration: none;
+}
+
+p {
+    margin: .3rem auto;
+    color: gray;
 }
