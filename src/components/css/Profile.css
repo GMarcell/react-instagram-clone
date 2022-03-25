@@ -1,17 +1,17 @@
 .Profile__Details {
-    margin: 50px 10px auto 10px;
+    margin: 3rem 1rem auto 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .Profile__avatar {
     height: 80px !important;
     width: 80px !important;
+    margin: auto !important;
 }
 
 .Profile__number {
     display: flex;
-    margin-right: 5px;
     justify-content: space-between;
 }
 
@@ -76,3 +76,5 @@ h4 {
 .HeaderTitle__menu {
     margin-left: 15px;
 }
+
+@media screen and (min-width: 768px) {}

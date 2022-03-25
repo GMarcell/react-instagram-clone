@@ -43,7 +43,6 @@ function Profile() {
     return (
         <div className='Profile'>
             <div className='Profile__summary'>
-                {/* <HeaderTitle username={name}/> */}
                 <div className={`HeaderTitle ${show && "HeaderTitle__white"}`}>
                     <h2 className='HeaderTitle__username'>{name}</h2>
                     <div className='HeaderTitle__btn'>
@@ -54,7 +53,12 @@ function Profile() {
                     </div>
                 </div>
                 <div className='Profile__Details'>
+                    <div>
                         <Avatar className='Profile__avatar' src="/static/images/avatar/1.jp"/>
+                        <div className='Profile__name'>
+                            <h4>{name}</h4>
+                        </div>
+                    </div>
                     <div className='Profile__number'>
                         <div className='Profile__sum'>
                             <h4>00</h4>
@@ -69,9 +73,6 @@ function Profile() {
                             <h4>Following</h4>
                         </div>
                     </div>
-                </div>
-                <div className='Profile__name'>
-                    <h4>{name}</h4>
                 </div>
                 <button className='Profile__edit'>
                     Edit Profile
